@@ -1,13 +1,13 @@
 import random
-# Dice options using lisy() and range()
-diceOptions = list(range(1,7))
+
+# Dice options using list() and range()
+diceOptions = list(range(1, 7))
 
 # Weapons Array
-weapons = ["Fist", "Knife", "Club", "Bomb", "Nuclear Bomb"]
+weapons = ["Fist", "Knife", "Club", "Gun", "Bomb", "Nuclear Bomb"]
 
-# Dsiplay avaliable weapons
+# Display available weapons
 print("Available Weapons: ", ', '.join(weapons))
-
 
 def get_combat_stregth(prompt):
     while True:
@@ -18,10 +18,10 @@ def get_combat_stregth(prompt):
             else:
                 print("Invalid input! Please enter a number between 1-6.")
         except ValueError:
-            print("Invalid input! Please enter a number between 1-6")
+            print("Invalid input. Please enter a number between 1-6")    
 
-combatStrength = get_combat_stregth("Enter your combat strength (1-6): ")
-mCombatStrength = get_combat_stregth("Enter monster's combat strength (1-6): ")
+combatStregth = get_combat_stregth("Enter your combat stregth (1-6): ")
+mCombatStregth = get_combat_stregth("Enter monster's combat stregth (1-6): ")
 
 for j in range(1, 21, 2):
     heroRoll = random.choice(diceOptions)
@@ -30,8 +30,8 @@ for j in range(1, 21, 2):
     heroWeapon = weapons[heroRoll - 1]
     monsterWeapon = weapons[monsterRoll - 1]
 
-    heroTotal = combatStrength + heroRoll
-    monsterTotal = mCombatStrength + monsterRoll
+    heroTotal = combatStregth + heroRoll
+    monsterTotal = mCombatStregth + monsterRoll
 
     print(f"\n Hero rolled {heroRoll}, Monster rolled {monsterRoll}")
     print(f"\n Hero selected {heroWeapon}, Monster selected {monsterWeapon}")
@@ -46,4 +46,4 @@ for j in range(1, 21, 2):
         print("It's a tie!")
     
 if j != 11:
-    print(f"\n Battle concluded after 20 rounds!") 
+    print(f"\n Battle concluded after 20 rounds!")
